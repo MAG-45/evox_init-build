@@ -28,6 +28,6 @@ m installclean
 
 if [[ "$PAID_SERVER" -eq "true" ]]
 then 
-    poweroff
+    sudo poweroff
 fi
 
