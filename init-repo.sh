@@ -1,6 +1,7 @@
 #!/bin/bash
+
 # Init repo EvoX
-mkdir evo && cd evo
+mkdir evo && cp build.sh evo/build.sh && cd evo
 repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # Copy Private Keys
@@ -18,7 +19,6 @@ git cherry-pick -Xtheirs 1d372ceec9c401d2521fb5d51284a8d2e309b6c0 1f4591d4818b77
 cd ../..
 # Sync repo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-# Lunch !
-lunch lineage_duchamp-ap4a-userdebug
+
 
 echo "You can start build EvoX for duchamp !"
