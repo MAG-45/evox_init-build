@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Init repo EvoX
-mkdir evo && cp build.sh evo/build.sh && cd evo
+mkdir evo && ln -sf ../build.sh evo/build.sh && cd evo
 repo init -u https://github.com/Evolution-X/manifest -b vic --git-lfs
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 # Copy Private Keys
