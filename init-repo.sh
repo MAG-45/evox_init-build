@@ -9,7 +9,6 @@ git clone ssh://git@github.com/MAG-45/evox-keys/ vendor/evolution-priv/keys
 # Add Duchamp manifests
 mkdir .repo/local_manifests
 git clone https://github.com/MAG-45/evox_manifest_duchamp .repo/local_manifests
-rm hardware/lineage/compat -rf
 # Fix Hardware lineage manifests
 sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
 # Fix FP Framework Issue
