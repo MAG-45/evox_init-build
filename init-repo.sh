@@ -14,8 +14,8 @@ rm hardware/lineage/compat -rf
 sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
 # Fix FP Framework Issue
 cd frameworks/base
-git fetch https://github.com/xiaomi-mt6897-duchamp/android_frameworks_base_new
-git cherry-pick -Xtheirs 1d372ceec9c401d2521fb5d51284a8d2e309b6c0 1f4591d4818b77c732963e16175776e09a981c6d
+git fetch https://github.com/snapboss/android_frameworks_base
+git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a   
 cd ../..
 # Sync repo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
