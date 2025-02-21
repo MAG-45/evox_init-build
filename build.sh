@@ -22,6 +22,10 @@ rm out/target/product/duchamp/boot.img
 # Send a notification to discord
 curl -X POST -H "Content-Type: application/json" -d '{"content": "🚀 Your Android ROM have been built ! See your OneDrive Mirror 🎉 <@1085964586588586045> "}' "$URL_WEBHOOK"
 
+# Clean Artefacts
+
+m installclean
+
 if [[ "$PAID_SERVER" -eq "true" ]]
 then 
     poweroff
