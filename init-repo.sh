@@ -16,11 +16,6 @@ cd frameworks/base
 git fetch https://github.com/snapboss/android_frameworks_base
 git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a   
 cd ../..
-# Fix OTA
-cp ../0001-Change-URL-Strings.patch packages/apps/Updater/0001-Change-URL-Strings.patch
-cd packages/apps/Updater
-git am < 0001-Change-URL-Strings.patch
-cd ../../../
 # Sync repo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 
