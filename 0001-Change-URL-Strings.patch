@@ -1,0 +1,34 @@
+From 23c901c2c98ac63f8a5f4ccaf54316608e421fbd Mon Sep 17 00:00:00 2001
+From: MAG <raphvmag@ik.me>
+Date: Sat, 22 Feb 2025 11:43:47 +0000
+Subject: [PATCH] Change URL Strings
+
+---
+ app/src/main/res/values/strings.xml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/app/src/main/res/values/strings.xml b/app/src/main/res/values/strings.xml
+index bfff476..e9083d1 100644
+--- a/app/src/main/res/values/strings.xml
++++ b/app/src/main/res/values/strings.xml
+@@ -30,7 +30,7 @@
+         Optional placeholders replaced at runtime:
+           {device} - Device name
+     -->
+-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/Evolution-X/OTA/vic/builds/{device}.json</string>
++    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/MAG-45/evolutionx_ota/refs/heads/vic/builds/{device}.json</string>
+     <string name="verification_failed_notification">Verification failed</string>
+     <string name="verifying_download_notification">Verifying update</string>
+     <string name="downloading_notification">Downloading</string>
+@@ -81,7 +81,7 @@
+     <string name="menu_copy_url">Copy URL</string>
+     <string name="menu_export_update">Export update</string>
+     <string name="menu_show_changelog">Show changelog</string>
+-    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/Evolution-X/OTA/vic/changelogs/<xliff:g id="device_name">%1$s</xliff:g>.txt</string>
++    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/MAG-45/evolutionx_ota/refs/heads/vic/changelogs/<xliff:g id="device_name">%1$s</xliff:g>.txt</string>
+     <string name="menu_ab_perf_mode">Prioritize update process</string>
+     <string name="menu_update_recovery">Update recovery</string>
+     <string name="toast_forced_update_recovery">It is impossible to disable Evolution X Recovery updates on this device.</string>
+-- 
+2.25.1
+
