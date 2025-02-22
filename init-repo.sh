@@ -16,6 +16,11 @@ cd frameworks/base
 git fetch https://github.com/snapboss/android_frameworks_base
 git cherry-pick -Xtheirs 53ebff0802f1043f361c699442a982b5b6e7792a   
 cd ../..
+# Fix OTA
+cp ../0001-Make-OTA-Working-for-unofficial.patch vendor/lineage/0001-Make-OTA-Working-for-unofficial.patch
+cd vendor/lineage
+git am < 0001-Make-OTA-Working-for-unofficial.patch
+cd ../../
 # Sync repo
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 

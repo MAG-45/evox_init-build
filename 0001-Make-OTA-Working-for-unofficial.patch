@@ -1,0 +1,26 @@
+From 7ab9b204e12818428e71bb866c8664347ced3dd7 Mon Sep 17 00:00:00 2001
+From: MAG <raphvmag@ik.me>
+Date: Sat, 22 Feb 2025 10:25:52 +0000
+Subject: [PATCH] Make OTA Working for unofficial
+
+---
+ .../rro_packages/UpdaterVanillaOverlay/res/values/strings.xml | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/overlay/rro_packages/UpdaterVanillaOverlay/res/values/strings.xml b/overlay/rro_packages/UpdaterVanillaOverlay/res/values/strings.xml
+index d497f39b..dc7a6671 100644
+--- a/overlay/rro_packages/UpdaterVanillaOverlay/res/values/strings.xml
++++ b/overlay/rro_packages/UpdaterVanillaOverlay/res/values/strings.xml
+@@ -5,7 +5,7 @@
+ -->
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+ 
+-    <string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/Evolution-X/OTA/vic-vanilla/builds/{device}.json</string>
+-    <string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/Evolution-X/OTA/vic-vanilla/changelogs/<xliff:g id="device_name">%1$s</xliff:g>.txt</string>
++	<string name="updater_server_url" translatable="false">https://raw.githubusercontent.com/MAG-45/evolutionx_ota/refs/heads/vic/builds/duchamp.json</string>
++	<string name="menu_changelog_url" translatable="false">https://raw.githubusercontent.com/MAG-45/evolutionx_ota/refs/heads/vic/changelogs/duchamp.txt</string>
+ 
+ </resources>
+-- 
+2.25.1
+
