@@ -1,5 +1,5 @@
 #!/bin/bash
-PAID_SERVER=false
+PAID_SERVER=true
 # Prepare dev env
 source build/envsetup.sh
 
@@ -7,50 +7,44 @@ source build/envsetup.sh
 export WITH_GMS=true
 
 # Lunch !
-lunch lineage_duchamp-ap4a-userdebug
+lunch lineage_duchamp-bp1a-userdebug
 
 # Start Building
 m evolution
 
 # Copy it t OneDrive Mirror
-rclone copy out/target/product/duchamp/EvolutionX-*.zip onedrive:/Backup/perso/evox_build_duchamp/Build/
-rclone copy out/target/product/duchamp/vendor_boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/
-rclone copy out/target/product/duchamp/boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/
-rclone copy out/target/product/duchamp/dtbo.img onedrive:/Backup/perso/evox_build_duchamp/Build/
-rclone copy out/target/product/duchamp/vendor_kernel_boot onedrive:/Backup/perso/evox_build_duchamp/Build
+rclone copy /mnt/evo/out/target/product/duchamp/EvolutionX-*.zip onedrive:/Backup/perso/evox_build_duchamp/Build/
+rclone copy /mnt/evo/out/target/product/duchamp/vendor_boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/
+rclone copy /mnt/evo/out/target/product/duchamp/boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/
+rclone copy /mnt/evo/out/target/product/duchamp/dtbo.img onedrive:/Backup/perso/evox_build_duchamp/Build/
+rclone copy /mnt/evo/out/verbose.log* onedrive:/Backup/perso/evox_duchamp_files/GAAPs_logs/
+
 # remove from the server
-rm out/target/product/duchamp/EvolutionX-*.zip
-rm out/target/product/duchamp/vendor_boot.img
-rm out/target/product/duchamp/boot.img
-rm out/target/product/duchamp/dtbo.img
-rm out/target/product/duchamp/vendor_kernel_boot.img
 
 # Send a notification to discord
 curl -X POST -H "Content-Type: application/json" -d '{"content": "🚀 Your Android ROM have been built ! See your OneDrive Mirror 🎉 <@1085964586588586045> "}' "$URL_WEBHOOK"
 
-<<<<<<< HEAD
-# Clean Artefacts
-
-m installclean
-
-if [[ "$PAID_SERVER" -eq "true" ]]
-then 
-    sudo poweroff
-=======
-
 export WITH_GMS=false
+
 # Lunch !
-lunch lineage_duchamp-ap4a-userdebug
+lunch lineage_duchamp-bp1a-userdebug
 
 # Start Building
 m evolution
 
+# Upload to OneDrive
+rclone copy /mnt/evo/out/target/product/duchamp/EvolutionX-*.zip onedrive:/Backup/perso/evox_build_duchamp/Build/Vanilla
+rclone copy /mnt/evo/out/target/product/duchamp/vendor_boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/Vanilla
+rclone copy /mnt/evo/out/target/product/duchamp/boot.img onedrive:/Backup/perso/evox_build_duchamp/Build/Vanilla
+rclone copy /mnt/evo/out/target/product/duchamp/dtbo.img onedrive:/Backup/perso/evox_build_duchamp/Build/Vanilla
+rclone copy /mnt/evo/out/verbose.log* onedrive:/Backup/perso/evox_duchamp_files/VANILLA_logs/
+
 # Send a notification to discord
 curl -X POST -H "Content-Type: application/json" -d '{"content": "🚀 Your Android ROM have been built ! See your OneDrive Mirror 🎉 <@1085964586588586045> "}' "$URL_WEBHOOK"
 
+m installclean
 
 if [[ "$PAID_SERVER" -eq "true" ]]
 then
-    poweroff
->>>>>>> b545952faa9950e0fa12d471f278ef68aade64c6
+    sudo poweroff
 fi

@@ -8,7 +8,7 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
 git clone ssh://git@github.com/MAG-45/evox-keys/ vendor/evolution-priv/keys
 # Add Duchamp manifests
 mkdir .repo/local_manifests
-git clone https://github.com/MAG-45/evox_manifest_duchamp .repo/local_manifests
+git clone https://github.com/MAG-45/evox_manifest_duchamp .repo/local_manifests -b vic
 # Fix Hardware lineage manifests
 sed -i '/<project path="hardware\/lineage\/compat" name="LineageOS\/android_hardware_lineage_compat" \/>/d' .repo/manifests/snippets/lineage.xml
 sed -i '/<project path="external\/wpa_supplicant_8" name="LineageOS\/android_external_wpa_supplicant_8" groups="pdk" \/>/d' .repo/manifests/default.xml
